@@ -1,8 +1,8 @@
 import React ,{Component} from 'react';
 import './App.css';
-import Events from './components/Events';
+import Events from './container/Events/index';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import RegisterForm from './components/RegisterForm';
+import DetailsForm from './container/DetailsForm/index'
 
  class App extends Component {
   render() {
