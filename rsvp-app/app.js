@@ -3,6 +3,7 @@ var bodyParser= require('body-parser')
 var {details}= require('./src/routes/detailsRoutes');
 var cors = require("cors");
 const mongoose = require('mongoose');
+const mongodb = require('mongodb');
 require('dotenv').config()
 
 var app =express()
@@ -17,7 +18,7 @@ mongoose.connect(process.env.DATABASE_CONNECTION, {useNewUrlParser: true, useUni
 details(app);
 
 app.listen(port,function(){
-    console.log(`i'm listening to port ${port}`)
+    console.log(`port ${port}`)
 })
 
 module.exports = app;

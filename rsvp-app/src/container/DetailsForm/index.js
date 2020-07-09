@@ -9,8 +9,7 @@ class DetailsForm extends Component {
       email: " ",
     };
   }
-  applicantInfo=()=>{
-      const {firstname,email}=this.state;
+  applicantInfo=(firstname,email)=>{
     this.props.postApplicantInfo(firstname,email);
   }
       handleChange = (event) => {
@@ -70,7 +69,7 @@ class DetailsForm extends Component {
             </div>
 
             <div class="row">
-              <input onClick={this.applicantInfo(firstname,email)}type="submit" value="Submit" />
+              <input onClick={()=>this.applicantInfo(firstname,email)}type="submit" value="Submit" />
             </div>
           </form>
         </div>
@@ -87,10 +86,9 @@ const mapStateToProps = state => ({
 });
 
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     postApplicantInfo: (firstname,email) => {
-        console.log("first name",firstname)
         dispatch(postApplicantInfo(firstname,email));
       },
   };
