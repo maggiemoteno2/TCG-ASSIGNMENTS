@@ -3,6 +3,7 @@ var bodyParser= require('body-parser')
 var {details}= require('./src/routes/detailsRoutes');
 var cors = require("cors");
 const mongoose = require('mongoose');
+require('dotenv').config()
 
 var app =express()
 const port = 3004;
