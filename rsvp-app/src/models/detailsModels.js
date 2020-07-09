@@ -6,4 +6,4 @@ var DetailsSchema = mongoose.Schema({
 
 });
 
-module.exports = mongoose.model("detailsModel", DetailsSchema);
+module.exports = mongoose.model("applicantInfo", DetailsSchema);
