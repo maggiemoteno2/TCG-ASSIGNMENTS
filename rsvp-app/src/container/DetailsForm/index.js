@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import {postApplicantInfo} from './../../redux/detailsForm/actions'
 class DetailsForm extends Component {
   constructor() {
     super();
@@ -8,17 +9,21 @@ class DetailsForm extends Component {
       email: " ",
     };
   }
+  applicantInfo=()=>{
+      const {firstname,email}=this.state;
+    this.props.postApplicantInfo(firstname,email);
+  }
       handleChange = (event) => {
         const value = event.target.value;
         this.setState({  [event.target.name]: value, });
         console.log("name",this.state)
       };
   render() {
-    const { firstname, lastName, email } = this.state;
+    const { firstname, email } = this.state;
     return (
       <div>
         <div className="form">
-          <form action="/action_page.php">
+          <form>
             <div class="row">
               <div class="col-25">
                 <label for="fname">First Name</label>
@@ -43,7 +48,7 @@ class DetailsForm extends Component {
                 <input
                   type="text"
                   id="email"
-                  value={email}
+                  value={this.state.email}
                   onChange={this.handleChange}
                   name="email"
                   placeholder="Your Email.." 
@@ -65,7 +70,7 @@ class DetailsForm extends Component {
             </div>
 
             <div class="row">
-              <input type="submit" value="Submit" />
+              <input onClick={this.applicantInfo(firstname,email)}type="submit" value="Submit" />
             </div>
           </form>
         </div>
@@ -76,9 +81,18 @@ class DetailsForm extends Component {
     );
   }
 }
-const mapStateToProps = (state) => ({});
+const mapStateToProps = state => ({
+    userDetails :state.detailsForm.userDetails
+    
+});
+
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    postApplicantInfo: (firstname,email) => {
+        console.log("first name",firstname)
+        dispatch(postApplicantInfo(firstname,email));
+      },
+  };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(DetailsForm);

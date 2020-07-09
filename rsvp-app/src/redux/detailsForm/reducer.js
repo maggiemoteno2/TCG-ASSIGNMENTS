@@ -1,22 +1,18 @@
-
-import {ADD_DETAILS} from './../actionTypes';
+import { ADD_DETAILS } from "./../actionTypes";
 const initialState = {
-  userDetails: []
+  userDetails: [],
 };
 
-export default function computers(state = initialState, action) {
+export default function details( state = initialState , action) {
   switch (action.type) {
-    case ADD_DETAILS: {
-        return{
-          ...state,
-          userDetails: [
-            ...state.userDetails,
-            action.payload
-          ]
+      case ADD_DETAILS: {
+          return {
+              ...state,
+              userDetails: [...state.userDetails, action.payload],
+            };
         }
-    }
-    default: {
-      return state;
-    }
+        default: {
+            return state;
+        }
   }
 }

@@ -6,12 +6,13 @@ export const postApplicantInfo=(firstname,email) =>{
         try {
           console.log("sent data", { firstname, email });
           const { data } = await axios.post("http://localhost:3004/applicantInformation", {
-            firstname,
-            email
-          });
+              firstname,
+              email
+            });
+            console.log("dsf",data)
           dispatch({
             type: ADD_DETAILS,
-            payload: { ...data }
+            payload: data 
           });
         } catch (e) {
           console.log(e);
