@@ -15,8 +15,8 @@ import DetailsForm from './container/DetailsForm/index'
         <div className ="event">
         <Events/>
         </div>
-        <div>
-          {/* <RegisterForm/> */}
+        <div className="">
+          
         </div>
       </div>
       </Router>

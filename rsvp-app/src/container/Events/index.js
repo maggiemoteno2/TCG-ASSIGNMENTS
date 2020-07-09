@@ -13,6 +13,7 @@ export default class Events extends Component {
           description:
             "Come celebrate with us on the 14th of January 6:00 in the evening at Gold reef city",
           isShow: false,
+          image:'https://cdn.pixabay.com/photo/2019/11/29/11/52/happy-kwanzaa-4661172_960_720.jpg'
         },
         {
           id: 2,
@@ -48,6 +49,7 @@ export default class Events extends Component {
           <h2 className="details">
             {event.description}
             <DetailsForm />
+          
           </h2>
         ) : null}
       </div>

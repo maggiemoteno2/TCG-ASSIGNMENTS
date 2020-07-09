@@ -1,20 +1,17 @@
-
 .App-header {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
- 
 }
-.events{
-  font-family: 'Inconsolata', monospace;
-  color:white;
-
+.events {
+  font-family: "Inconsolata", monospace;
+  color: white;
 }
 a:link {
   text-decoration: none;
-  color:rgb(233, 231, 231);
+  color: rgb(233, 231, 231);
 }
 
 a:hover {
@@ -23,24 +20,110 @@ a:hover {
 ul {
   list-style-type: none;
 }
-a{color:white}
+a {
+  color: white;
+}
 
-
-body{
+body {
   background-color: #282c34;
 }
-header div{
-    background: linear-gradient(to right,white, white,white, white, orange, orange);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 60px;
-    line-height: 60px;
-    font-family: 'Merriweather', serif;
-  
+header div {
+  background: linear-gradient(
+    to right,
+    white,
+    white,
+    white,
+    white,
+    orange,
+    orange
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 60px;
+  line-height: 60px;
+  font-family: "Merriweather", serif;
 }
 
-.details{
-  padding-left: 10em;
-  border-bottom: 6px solid red;
-  
+.details {
+  padding-left: 10px;
+  border-bottom: 6px solid rgb(238, 204, 204);
+}
+.h2,
+h2 {
+  font-size: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 90%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  color: black;
+}
+
+input[type="submit"] {
+  background-color: rgb(169, 216, 170);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type="submit"]:hover {
+  background-color: #5d7d97;
+}
+
+.form {
+  border-radius: 24px;
+  background-color: #f2f2f2;
+  padding: 32px;
+  width: 44%;
+  margin: 79px 50px 70px 440px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide.*/
+@media screen and (max-width: 600px) {
+  .col-25,
+  .col-75,
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+.details {
+  background-image:  url("https://cdn.pixabay.com/photo/2016/11/29/12/17/blur-1869429_960_720.jpg");
+  background-size: cover;
 }

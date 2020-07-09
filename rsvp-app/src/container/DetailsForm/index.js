@@ -1,18 +1,74 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
-import Events from "./../Events";
-export default class DetailsForm extends Component {
+import { connect } from "react-redux";
+class DetailsForm extends Component {
   constructor() {
     super();
     this.state = {
-      
+      firstname: "",
+      email: " ",
     };
   }
+      handleChange = (event) => {
+        const value = event.target.value;
+        this.setState({  [event.target.name]: value, });
+        console.log("name",this.state)
+      };
   render() {
-     
-    
+    const { firstname, lastName, email } = this.state;
     return (
       <div>
+        <div className="form">
+          <form action="/action_page.php">
+            <div class="row">
+              <div class="col-25">
+                <label for="fname">First Name</label>
+              </div>
+              <div class="col-75">
+                <input
+                  type="text"
+        
+                  value={firstname}
+                  onChange={this.handleChange}
+                  name="firstname"
+                  placeholder="Your name.."
+                required/>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-25">
+                <label for="email">Email</label>
+              </div>
+              <div class="col-75">
+                <input
+                  type="text"
+                  id="email"
+                  value={email}
+                  onChange={this.handleChange}
+                  name="email"
+                  placeholder="Your Email.." 
+                  required/>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="country">Food</label>
+              </div>
+              <div class="col-75">
+                <select id="foodType" name="foodType">
+                  <option value="none">None</option>
+                  <option value="Chicken">Chicken</option>
+                  <option value="Beef">BEEF</option>
+                  <option value="Pork">Pork</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <input type="submit" value="Submit" />
+            </div>
+          </form>
+        </div>
         <a href="">
           <button>Back</button>
         </a>
@@ -20,3 +76,9 @@ export default class DetailsForm extends Component {
     );
   }
 }
+const mapStateToProps = (state) => ({});
+
+const mapDispatchToProps = (dispatch) => {
+  return {};
+};
+export default connect(mapStateToProps, mapDispatchToProps)(DetailsForm);
