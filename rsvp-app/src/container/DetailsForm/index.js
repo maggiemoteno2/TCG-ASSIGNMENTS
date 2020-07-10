@@ -60,7 +60,7 @@ class DetailsForm extends Component {
               </div>
               <div class="col-75">
                 <select id="foodType" name="foodType">
-                  <option value="none">None</option>
+                  <option value="Halal">Halal</option>
                   <option value="Chicken">Chicken</option>
                   <option value="Beef">BEEF</option>
                   <option value="Pork">Pork</option>
@@ -73,9 +73,11 @@ class DetailsForm extends Component {
             </div>
           </form>
         </div>
+        <div className="backButton">
         <a href="">
-          <button>Back</button>
+          <button className="btn-warning">Back</button>
         </a>
+        </div>
       </div>
     );
   }

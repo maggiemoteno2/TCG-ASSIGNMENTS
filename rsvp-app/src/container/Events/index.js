@@ -6,12 +6,12 @@ export default class Events extends Component {
   constructor() {
     super();
     this.state = {
-      descriptions: [
+      occasions: [
         {
           id: 1,
           name: "Birthday",
           description:
-            "Come celebrate with us on the 14th of January 6:00 in the evening at Gold reef city",
+            "Lulu is turning 21!!!!!!!!!!!!!      Come celebrate with us on the 14th of January 6:00 in the evening at Gold reef city",
           isShow: false,
           image:'https://cdn.pixabay.com/photo/2019/11/29/11/52/happy-kwanzaa-4661172_960_720.jpg'
         },
@@ -32,25 +32,28 @@ export default class Events extends Component {
     };
   }
   toggleShowDescription = (eventId) => {
-    const { descriptions } = this.state;
-    descriptions[eventId - 1].isShow = true;
-    this.setState({ descriptions });
-    console.log(descriptions);
+    const { occasions } = this.state;
+    occasions[eventId - 1].isShow = true;
+    this.setState({ occasions });
+    console.log(occasions);
   };
 
   render() {
-    const { descriptions } = this.state;
-    const events = descriptions.map((event) => (
+    const { occasions } = this.state;
+    const events = occasions.map((event) => (
       <div key={event.id}>
         <h2 onClick={() => this.toggleShowDescription(event.id)}>
           {event.name}
         </h2>
         {event.isShow === true ? (
-          <h2 className="details">
+          <h2 >
             {event.description}
+            <div className="detailsForm">
             <DetailsForm />
+            </div>
+            </h2>
           
-          </h2>
+         
         ) : null}
       </div>
     ));
