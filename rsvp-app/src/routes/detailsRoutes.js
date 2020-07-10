@@ -1,12 +1,18 @@
-const DetailsSchema = require('./../models/detailsModels');
+const ApplicantInfo = require('./../models/detailsModels');
 
 const details = function(app){
-  app.get("/applicantInformation",(req,res)=>{
-  
-  })
-app.post("/applicantInformation",(req,res)=>{
-  res.status(201).send(req.body)
-  console.log(req.body)
+app.post("/applicantInformation",async(req,res)=>{
+  const detail = await ApplicantInfo.save({firstName: req.body.firstName , email:req.body.firstName});
+  try {
+    const detailsSchema = new ApplicantInfo({
+      firstName: req.body.firstName,
+      email: req.body.email
+    });
+    res.status(201).json(detailsSchema);
+    console.log(detail)
+  }catch(e){
+console.log(e)
+  }
 })
 }
 

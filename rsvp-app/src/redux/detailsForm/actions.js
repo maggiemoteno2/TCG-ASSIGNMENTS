@@ -5,7 +5,7 @@ export const postApplicantInfo=(firstname,email) =>{
     return async dispatch => {
         try {
     
-          const { data } = await axios.post("http://localhost:3004/applicantInformation", {
+          const { data } = await axios.post("http://localhost:3005/applicantInformation", {
               firstname,
               email
             });

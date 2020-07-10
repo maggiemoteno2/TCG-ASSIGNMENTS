@@ -5,5 +5,5 @@ var DetailsSchema = mongoose.Schema({
   email:String,
 
 });
-
-module.exports = mongoose.model("applicantInfo", DetailsSchema);
+var ApplicantInfoModel = mongoose.model('ApplicantInfoModel', DetailsSchema);
+module.exports = ApplicantInfoModel;
