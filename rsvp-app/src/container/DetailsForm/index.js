@@ -9,8 +9,8 @@ class DetailsForm extends Component {
       email: " ",
     };
   }
-  applicantInfo=(firstname,email)=>{
-    this.props.postApplicantInfo(firstname,email);
+  applicantInfo=(firstName,email)=>{
+    this.props.postApplicantInfo(firstName,email);
   }
       handleChange = (event) => {
         const value = event.target.value;
@@ -88,8 +88,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    postApplicantInfo: (firstname,email) => {
-        dispatch(postApplicantInfo(firstname,email));
+    postApplicantInfo: (firstName,email) => {
+        dispatch(postApplicantInfo(firstName,email));
       },
   };
 };

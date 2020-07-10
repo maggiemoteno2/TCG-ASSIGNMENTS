@@ -1,12 +1,12 @@
 import {ADD_DETAILS} from './../actionTypes'
 import axios from "axios"
 
-export const postApplicantInfo=(firstname,email) =>{
+export const postApplicantInfo=(firstName,email) =>{
     return async dispatch => {
         try {
     
           const { data } = await axios.post("http://localhost:3005/applicantInformation", {
-              firstname,
+            firstName,
               email
             });
    

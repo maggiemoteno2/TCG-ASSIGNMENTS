@@ -9,7 +9,7 @@ app.post("/applicantInformation",async(req,res)=>{
     });
     const detail =detailsSchema.save({firstName: req.body.firstName , email:req.body.firstName});
     res.status(201).json(detailsSchema);
-    console.log(detail)
+    console.log(req.body.firstName)
   }catch(e){
 console.log(e)
   }
